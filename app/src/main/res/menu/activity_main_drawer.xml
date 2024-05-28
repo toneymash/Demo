@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    >
+
+    <group android:checkableBehavior="single"
+        >
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/profile"
+            android:icon="@drawable/user"
+            android:title="profile"
+
+            />
+
+        <item
+            android:id="@+id/accounts"
+            android:icon="@drawable/account"
+            android:title="accounts" />
+
+        <item
+            android:id="@+id/products"
+            android:icon="@drawable/invest"
+            android:title="our product" />
+        <item
+            android:id="@+id/advisor"
+            android:icon="@drawable/advisor"
+            android:title="advisor" />
+        <item
+            android:id="@+id/setting"
+            android:icon="@drawable/setting"
+            android:title="@string/action_settings" />
+        <item
+            android:id="@+id/help"
+            android:icon="@drawable/help"
+            android:title="help" />
+        <item
+            android:id="@+id/share"
+            android:icon="@drawable/share"
+            android:title="share" />
+        <item
+            android:id="@+id/feedback"
+            android:icon="@drawable/feedback"
+            android:title="feedback" />
+
+
+
+
+    </group>
+</menu>
