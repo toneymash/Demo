@@ -6,17 +6,17 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 
 object RetrofitClient {
-    private const val BASE_URL = "https://yourapi.com/api/"
+   private const val BASE_URL = "https://ee66-41-90-101-26.ngrok-free.app/"
 
-    private val logging = HttpLoggingInterceptor().apply {
+   private val logging = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
     }
 
-    private val client = OkHttpClient.Builder()
+   private val client = OkHttpClient.Builder()
         .addInterceptor(logging)
         .build()
 
-    val instance: Retrofit by lazy {
+   val instance: Retrofit by lazy {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())

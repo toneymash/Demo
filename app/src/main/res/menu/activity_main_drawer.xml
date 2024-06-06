@@ -11,39 +11,40 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/profile"
+            android:id="@+id/nav_profile"
             android:icon="@drawable/user"
-            android:title="profile"
+            android:title="@string/menu_profile"
 
             />
 
         <item
-            android:id="@+id/accounts"
+            android:id="@+id/nav_accounts"
             android:icon="@drawable/account"
-            android:title="accounts" />
+            android:title="@string/menu_accounts"
+        />
 
         <item
-            android:id="@+id/products"
+            android:id="@+id/nav_our_products"
             android:icon="@drawable/invest"
-            android:title="our product" />
+            android:title="@string/menu_our_products"/>
         <item
-            android:id="@+id/advisor"
+            android:id="@+id/advisorFragment"
             android:icon="@drawable/advisor"
             android:title="advisor" />
         <item
-            android:id="@+id/setting"
+            android:id="@+id/nav_settings"
             android:icon="@drawable/setting"
             android:title="@string/action_settings" />
         <item
-            android:id="@+id/help"
+            android:id="@+id/nav_help"
             android:icon="@drawable/help"
             android:title="help" />
         <item
-            android:id="@+id/share"
+            android:id="@+id/nav_share"
             android:icon="@drawable/share"
             android:title="share" />
         <item
-            android:id="@+id/feedback"
+            android:id="@+id/nav_feedback"
             android:icon="@drawable/feedback"
             android:title="feedback" />
 

@@ -28,7 +28,7 @@ class LoginActivity : AppCompatActivity() {
 
 
         val editPassword = findViewById<EditText>(R.id.editTextPassword)
-        val editEmail = findViewById<EditText>(R.id.editemail)
+        val editEmail = findViewById<EditText>(R.id.editEmail)
         val buttonRegister=  findViewById<Button>(R.id.buttonRegister)
 
 
@@ -40,9 +40,15 @@ class LoginActivity : AppCompatActivity() {
             val password = editPassword.text.toString()
 
             if (username.isNotEmpty() && password.isNotEmpty()) {
-                performLogin(username, password)
+//                performLogin(username, password)
+                val intent = Intent(this, Home::class.java)
+                startActivity(intent)
+
+
+
+
             } else {
-                Toast.makeText(this, "Please enter username and password", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please enter Email and password", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -61,13 +67,13 @@ class LoginActivity : AppCompatActivity() {
 
 
 
-    private fun performLogin(username: String, password: String) {
-        val apiService = RetrofitClient.instance.create(ApiService::class.java)
-        val call = apiService.login(LoginRequest(username, password))
+    private fun performLogin(Email: String, password: String) {
+      val apiService = RetrofitClient.instance.create(ApiService::class.java)
+        val call = apiService.login(LoginRequest(Email, password))
 
-        call.enqueue(object : Callback<LoginResponse> {
-            override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-                if (response.isSuccessful) {
+       call.enqueue(object : Callback<LoginResponse> {
+           override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+               if (response.isSuccessful) {
                     val loginResponse = response.body()
                     Toast.makeText(this@LoginActivity, "Login successful", Toast.LENGTH_SHORT).show()
                     // Navigate to another activity if needed

@@ -39,6 +39,10 @@ android {
 }
 
 dependencies {
+    implementation ("com.google.android.material:material:1.9.0")
+    implementation("androidx.appcompat:appcompat:1.2.0")
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.4.0")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
 
     implementation ("androidx.recyclerview:recyclerview:1.2.1")
     implementation  ("androidx.cardview:cardview:1.0.0")
@@ -54,6 +58,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.preference)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

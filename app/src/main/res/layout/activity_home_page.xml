@@ -11,9 +11,9 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:background="#4305ED"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        android:title="Investment App"
+        android:title="smartinvest App"
         android:titleTextColor="@android:color/white"
         android:elevation="4dp"/>
 

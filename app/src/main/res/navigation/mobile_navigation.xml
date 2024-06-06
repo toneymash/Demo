@@ -5,11 +5,7 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/nav_home">
 
-    <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.investapp.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+
 
     <fragment
         android:id="@+id/nav_gallery"
@@ -22,4 +18,44 @@
         android:name="com.example.investapp.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.investapp.ui.profile.ProfileFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/nav_accounts"
+        android:name="com.example.investapp.ui.accounts.accountsFragment"
+        android:label="@string/menu_accounts"
+        tools:layout="@layout/fragment_accounts" />
+    <fragment
+        android:id="@+id/nav_our_products"
+        android:name="com.example.investapp.ui.our_products.our_products"
+        android:label="@string/menu_our_products"
+        tools:layout="@layout/fragment_our_products" />
+    <fragment
+        android:id="@+id/advisorFragment"
+        android:name="com.example.investapp.ui.Advisor.AdvisorFragment"
+        android:label="AdvisorFragment" />
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.investapp.ui.settings.settingsFragment"
+        android:label="settingsFragment" />
+    <fragment
+        android:id="@+id/nav_help"
+        android:name="com.example.investapp.ui.help.helpFragment"
+        android:label="helpFragment" />
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.example.investapp.ui.share.shareFragment"
+        android:label="shareFragment" />
+    <fragment
+        android:id="@+id/nav_feedback"
+        android:name="com.example.investapp.ui.feedback.feedbackFragment"
+        android:label="@string/menu_feedback" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.investapp.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
 </navigation>
