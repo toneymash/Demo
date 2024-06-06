@@ -18,65 +18,50 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
+
+        // Apply window insets for edge-to-edge display
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-
-
-
         val editPassword = findViewById<EditText>(R.id.editTextPassword)
         val editEmail = findViewById<EditText>(R.id.editEmail)
-        val buttonRegister=  findViewById<Button>(R.id.buttonRegister)
-
-
-
+        val buttonRegister = findViewById<Button>(R.id.buttonRegister)
         val buttonLogin = findViewById<Button>(R.id.buttonLogin)
 
         buttonLogin.setOnClickListener {
-            val username = editEmail .text.toString()
+            val username = editEmail.text.toString()
             val password = editPassword.text.toString()
 
             if (username.isNotEmpty() && password.isNotEmpty()) {
-//                performLogin(username, password)
+                // Perform login using Retrofit
+              //  performLogin(username, password)
                 val intent = Intent(this, Home::class.java)
                 startActivity(intent)
-
-
-
-
             } else {
                 Toast.makeText(this, "Please enter Email and password", Toast.LENGTH_SHORT).show()
             }
         }
 
-
         buttonRegister.setOnClickListener {
-
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
-
-
-
-
         }
     }
 
+    private fun performLogin(email: String, password: String) {
+        val apiService = RetrofitClient.instance.create(ApiService::class.java)
+        val call = apiService.login(LoginRequest(email, password))
 
-
-
-    private fun performLogin(Email: String, password: String) {
-      val apiService = RetrofitClient.instance.create(ApiService::class.java)
-        val call = apiService.login(LoginRequest(Email, password))
-
-       call.enqueue(object : Callback<LoginResponse> {
-           override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-               if (response.isSuccessful) {
+        call.enqueue(object : Callback<LoginResponse> {
+            override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+                if (response.isSuccessful) {
                     val loginResponse = response.body()
                     Toast.makeText(this@LoginActivity, "Login successful", Toast.LENGTH_SHORT).show()
-                    // Navigate to another activity if needed
+
+                    // Navigate to the main activity
                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
                     intent.putExtra("TOKEN", loginResponse?.token)
                     startActivity(intent)
@@ -91,5 +76,4 @@ class LoginActivity : AppCompatActivity() {
             }
         })
     }
-
 }
