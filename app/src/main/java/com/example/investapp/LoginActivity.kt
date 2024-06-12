@@ -2,6 +2,7 @@ package com.example.investapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -26,22 +27,26 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
-        val editPassword = findViewById<EditText>(R.id.editTextPassword)
-        val editEmail = findViewById<EditText>(R.id.editEmail)
+        val editpassword = findViewById<EditText>(R.id.editTextpassword)
+        val editemail = findViewById<EditText>(R.id.editemail)
         val buttonRegister = findViewById<Button>(R.id.buttonRegister)
         val buttonLogin = findViewById<Button>(R.id.buttonLogin)
 
         buttonLogin.setOnClickListener {
-            val username = editEmail.text.toString()
-            val password = editPassword.text.toString()
+            val email = editemail.text.toString().trim()
+            val password = editpassword.text.toString().trim()
 
-            if (username.isNotEmpty() && password.isNotEmpty()) {
+            val intent = Intent(this, Home::class.java)
+            startActivity(intent)
+            if (isValidEmail(email) && isValidPassword(password)) {
                 // Perform login using Retrofit
-              //  performLogin(username, password)
-                val intent = Intent(this, Home::class.java)
-                startActivity(intent)
+                performLogin(email, password)
             } else {
-                Toast.makeText(this, "Please enter Email and password", Toast.LENGTH_SHORT).show()
+                if (!isValidEmail(email)) {
+                    Toast.makeText(this, "Please enter a valid Email", Toast.LENGTH_SHORT).show()
+                } else if (!isValidPassword(password)) {
+                    Toast.makeText(this, "Please enter a valid Password", Toast.LENGTH_SHORT).show()
+                }
             }
         }
 
@@ -49,6 +54,17 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun isValidEmail(email: String): Boolean {
+        // Regular expression for validating email
+        val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
+        return email.matches(emailPattern.toRegex())
+    }
+
+    private fun isValidPassword(password: String): Boolean {
+        // Password should not be empty and should be at least 6 characters long (you can adjust this)
+        return password.isNotEmpty() && password.length >= 6
     }
 
     private fun performLogin(email: String, password: String) {
@@ -59,15 +75,25 @@ class LoginActivity : AppCompatActivity() {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 if (response.isSuccessful) {
                     val loginResponse = response.body()
-                    Toast.makeText(this@LoginActivity, "Login successful", Toast.LENGTH_SHORT).show()
+                    if (loginResponse != null) {
+                        // Log the raw response
+                        Log.d("LoginActivity", "LoginResponse: ${response.body()}")
 
-                    // Navigate to the main activity
-                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                    intent.putExtra("TOKEN", loginResponse?.token)
-                    startActivity(intent)
-                    finish()
+                        // Check if the token is null
+                        if (loginResponse.token != null) {
+                            Toast.makeText(this@LoginActivity, "Login successful! Token: ${loginResponse.token}", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this@LoginActivity, Home::class.java)
+                            intent.putExtra("TOKEN", loginResponse.token)
+                            startActivity(intent)
+                            finish()
+                        } else {
+                            Toast.makeText(this@LoginActivity, "Login failed: Token is null", Toast.LENGTH_SHORT).show()
+                        }
+                    } else {
+                        Toast.makeText(this@LoginActivity, "Login failed: Response body is null", Toast.LENGTH_SHORT).show()
+                    }
                 } else {
-                    Toast.makeText(this@LoginActivity, "Login failed: ${response.errorBody()?.string()}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity, "Login failed: ${response.message()}", Toast.LENGTH_SHORT).show()
                 }
             }
 

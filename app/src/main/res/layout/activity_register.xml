@@ -5,68 +5,81 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/red"
+    android:background="#2196F3"
     tools:context=".MainActivity">
 
     <EditText
         android:id="@+id/edittextfirstname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60sp"
-        android:layout_marginLeft="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
         android:hint="First Name"
         android:inputType="text"
-        android:height="60dp"
-        android:textColorHint="@color/white" />
+        android:textColorHint="@color/black" />
 
     <EditText
         android:id="@+id/edittextlastname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edittextfirstname"
-        android:layout_alignParentStart="true"
+        android:layout_below="@id/edittextfirstname"
         android:layout_margin="20dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="20dp"
         android:hint="Last Name"
         android:inputType="text"
-        android:textColorHint="#E7E9EA" />
-
-    <EditText
-        android:id="@+id/edittextIDNUMBER"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edittextlastname"
-        android:inputType="text"
-        android:hint="ID Number"
-        android:textColorHint="#EEF3F6"
-        android:layout_marginLeft="20dp" />
+        android:textColorHint="@color/black" />
 
     <EditText
         android:id="@+id/edittextemail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edittextIDNUMBER"
-        android:inputType="text"
+        android:layout_below="@id/edittextlastname"
+        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
         android:hint="Email"
-        android:layout_marginLeft="20dp"
-        android:textColorHint="#F0F5FA" />
+        android:inputType="text"
+        android:textColorHint="@color/black" />
+
+    <EditText
+        android:id="@+id/edittextphonenumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edittextemail"
+        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:hint="Phone Number"
+        android:inputType="text"
+        android:textColorHint="@color/black" />
+
+    <EditText
+        android:id="@+id/edittextidNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edittextphonenumber"
+        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:hint="ID Number"
+        android:inputType="text"
+        android:textColorHint="@color/black" />
 
     <EditText
         android:id="@+id/edittextpassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edittextemail"
-        android:layout_marginLeft="20dp"
-        android:inputType="text"
-        android:textColorHint="#E8EBED"
-        android:hint="Password" />
+        android:layout_below="@id/edittextidNumber"
+        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColorHint="@color/black" />
 
     <Button
-        android:id="@+id/editbtnregister"
-        android:layout_width="match_parent"
+        android:id="@+id/btn_register"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edittextpassword"
-        android:layout_marginLeft="45dp"
+        android:layout_below="@id/edittextpassword"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
         android:text="Register" />
 
 </RelativeLayout>

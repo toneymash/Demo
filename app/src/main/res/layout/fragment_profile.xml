@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/red"
+    android:background="#081767"
     tools:context=".ui.profile.ProfileFragment">
 
     <LinearLayout
@@ -15,7 +15,7 @@
         android:padding="15dp">
 
         <TextView
-            android:background="#430202"
+            android:background="#081767"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="profile"
@@ -31,7 +31,7 @@
             android:layout_marginTop="20dp">
 
             <LinearLayout
-                android:background="#5A0606"
+                android:background="#081767"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -47,7 +47,7 @@
                     android:src="@drawable/man" />
 
                 <LinearLayout
-                    android:background="#630404"
+                    android:background="#081767"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -73,7 +73,7 @@
             app:cardCornerRadius="10dp">
 
             <LinearLayout
-                android:background="#500202"
+                android:background="#081767"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -117,7 +117,7 @@
             app:cardCornerRadius="10dp">
 
             <LinearLayout
-                android:background="#550202"
+                android:background="#081767"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"

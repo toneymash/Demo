@@ -8,6 +8,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.investapp.api.RegisterRequest
+import com.example.investapp.api.RegisterResponse
+import com.example.investapp.api.RetrofitClient
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,10 +28,11 @@ class RegisterActivity : AppCompatActivity() {
 
         val editTextFirstName = findViewById<EditText>(R.id.edittextfirstname)
         val editTextLastName = findViewById<EditText>(R.id.edittextlastname)
-        val editTextIDNumber = findViewById<EditText>(R.id.edittextIDNUMBER)
         val editTextEmail = findViewById<EditText>(R.id.edittextemail)
+        val editTextPhoneNumber = findViewById<EditText>(R.id.edittextphonenumber)
+        val editTextIDNumber = findViewById<EditText>(R.id.edittextidNumber)
         val editTextPassword = findViewById<EditText>(R.id.edittextpassword)
-        val buttonRegister = findViewById<Button>(R.id.editbtnregister)
+        val buttonRegister = findViewById<Button>(R.id.btn_register)
 
         buttonRegister.setOnClickListener {
             val firstName = editTextFirstName.text.toString()
@@ -33,22 +40,29 @@ class RegisterActivity : AppCompatActivity() {
             val idNumber = editTextIDNumber.text.toString()
             val email = editTextEmail.text.toString()
             val password = editTextPassword.text.toString()
+            val phoneNumber = editTextPhoneNumber.text.toString()
 
             if (firstName.isNotEmpty() && lastName.isNotEmpty() && idNumber.isNotEmpty() &&
-                email.isNotEmpty() && password.isNotEmpty()
+                email.isNotEmpty() && password.isNotEmpty() && phoneNumber.isNotEmpty()
             ) {
-                // Perform registration logic here
-                // For now, just show a toast message
-                Toast.makeText(this, "Register successful", Toast.LENGTH_SHORT).show()
+                val request = RegisterRequest(firstName, lastName, idNumber, email, password, phoneNumber)
+
+                RetrofitClient.apiService.registerUser(request).enqueue(object : Callback<RegisterResponse> {
+                    override fun onResponse(call: Call<RegisterResponse>, response: Response<RegisterResponse>) {
+                        if (response.isSuccessful) {
+                            Toast.makeText(this@RegisterActivity, "Register successful", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(this@RegisterActivity, "Registration failed", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
+                        Toast.makeText(this@RegisterActivity, "API call failed: ${t.message}", Toast.LENGTH_SHORT).show()
+                    }
+                })
             } else {
                 Toast.makeText(this, "Please enter all details", Toast.LENGTH_SHORT).show()
             }
         }
-
-
-
-
-
-
     }
 }

@@ -1,49 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:padding="10dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/white"
-    tools:context=".LoginActivity"
-    >
-    <EditText
-        android:padding="10dp"
-        android:layout_marginTop="100dp"
-        android:id="@+id/editEmail"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:textColorHint="@color/black"
-        android:hint="Email"
-        android:inputType="text" />
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:hint="Password"
-        android:textColorHint="@color/black"
-        android:inputType="textPassword" />
-    <Button
+    android:background="#081767"
+    tools:context=".LoginActivity">
 
-        android:id="@+id/buttonLogin"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        />
-    <TextView
-        android:id="@+id/forgot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="forgot password?"
-        android:textColor="#003BB1"/>
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/buttonRegister"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Register" />
+        <TextView
+            android:id="@+id/text1"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:text="welcome back"
+            android:textColor="@color/black"
+            android:textSize="30dp" />
 
-</LinearLayout>
+
+
+        <EditText
+            android:id="@+id/editemail"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="100dp"
+            android:hint="Email"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColorHint="@color/black" />
+
+        <EditText
+            android:id="@+id/editTextpassword"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColorHint="@color/black" />
+
+        <Button
+            android:id="@+id/buttonLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Login" />
+
+
+        <CheckBox
+            android:id="@+id/checkboxRememberMe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remember me"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="388dp" />
+
+        <TextView
+            android:id="@+id/forgot"
+            android:layout_width="224dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="forgot password?"
+            android:textColor="#003BB1"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="448dp" />
+
+        <Button
+            android:id="@+id/buttonRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="signup"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="497dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/googleIcon"
+            android:layout_margin="10dp"
+            android:text="or login with"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="564dp" />
+
+        <ImageView
+            android:id="@+id/googleIcon"
+            android:layout_width="40dp"
+            android:layout_height="46dp"
+            android:layout_margin="0dp"
+            android:clickable="true"
+            android:contentDescription="sing in with gogogle"
+            android:focusable="true"
+            android:src="@drawable/google"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="595dp" />
+
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

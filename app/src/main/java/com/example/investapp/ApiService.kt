@@ -4,10 +4,10 @@ import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST
 
-data class LoginRequest(val Email: String, val Password: String)
-data class LoginResponse(val token: String, val Email: String)
+data class LoginRequest(val email: String, val password: String)
+data class LoginResponse(val token: String, val email: String)
 
 interface ApiService {
-    @POST("api/open/auth/login")
+    @POST("api/open/registration/login")
     fun login(@Body request: LoginRequest): Call<LoginResponse>
 }

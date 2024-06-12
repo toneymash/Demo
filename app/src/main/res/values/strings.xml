@@ -6,6 +6,16 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
+    <string name="whatsapp_icon_desc">WhatsApp Icon</string>
+    <string name="icon1_desc">Description for Icon 1</string>
+    <string name="icon2_desc">Description for Icon 2</string>
+    <string name="icon3_desc">Description for Icon 3</string>
+    <string name="icon4_desc">Description for Icon 4</string>
+
+    <string-array name="payment_methods">
+        <item>MPESA</item>
+        <item>Bank</item>
+    </string-array>
 
     <string name="action_settings">Settings</string>
     <string name="menu_home">Home</string>
