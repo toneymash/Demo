@@ -1,5 +1,6 @@
 package com.example.investapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -11,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.investapp.api.RegisterRequest
 import com.example.investapp.api.RegisterResponse
 import com.example.investapp.api.RetrofitClient
+import com.example.investapp.ui.personal_details
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -41,6 +43,8 @@ class RegisterActivity : AppCompatActivity() {
             val email = editTextEmail.text.toString()
             val password = editTextPassword.text.toString()
             val phoneNumber = editTextPhoneNumber.text.toString()
+            val intent = Intent(this, personal_details::class.java)
+            startActivity(intent)
 
             if (firstName.isNotEmpty() && lastName.isNotEmpty() && idNumber.isNotEmpty() &&
                 email.isNotEmpty() && password.isNotEmpty() && phoneNumber.isNotEmpty()

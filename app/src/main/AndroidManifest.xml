@@ -15,6 +15,30 @@
         android:theme="@style/Theme.Investapp"
         tools:targetApi="31">
         <activity
+            android:name=".calcutor"
+            android:exported="false" />
+        <activity
+            android:name=".ui.productsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.RealEstateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MoneyMarketActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.RetirementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.retirement"
+            android:exported="false" />
+        <activity
+            android:name=".ProductsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.personal_details"
+            android:exported="false" />
+        <activity
             android:name=".ui.settings.SettingsActivity"
             android:exported="false"
             android:label="@string/title_activity_settings" />

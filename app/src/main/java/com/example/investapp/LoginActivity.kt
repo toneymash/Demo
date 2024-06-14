@@ -36,8 +36,8 @@ class LoginActivity : AppCompatActivity() {
             val email = editemail.text.toString().trim()
             val password = editpassword.text.toString().trim()
 
-            val intent = Intent(this, Home::class.java)
-            startActivity(intent)
+           val intent = Intent(this, Home::class.java)
+           startActivity(intent)
             if (isValidEmail(email) && isValidPassword(password)) {
                 // Perform login using Retrofit
                 performLogin(email, password)
