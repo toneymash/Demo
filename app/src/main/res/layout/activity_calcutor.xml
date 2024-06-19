@@ -69,6 +69,7 @@
         app:layout_constraintVertical_bias="0.04" />
 
     <Button
+        android:background="#4A4949"
         android:id="@+id/calculateButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -90,6 +91,8 @@
         tools:layout_editor_absoluteX="-16dp" />
 
     <Button
+        android:background="#680902"
+
         android:id="@+id/deposit"
         android:layout_width="106dp"
         android:layout_height="47dp"

@@ -11,6 +11,7 @@
     <string name="icon2_desc">Description for Icon 2</string>
     <string name="icon3_desc">Description for Icon 3</string>
     <string name="icon4_desc">Description for Icon 4</string>
+    <string name="result_format">Future Value: ksh%.2f</string>
 
     <string-array name="payment_methods">
         <item>MPESA</item>

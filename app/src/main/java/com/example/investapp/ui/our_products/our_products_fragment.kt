@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import com.example.investapp.R
 import com.example.investapp.databinding.FragmentOurProductsBinding
 import com.example.investapp.ui.MoneyMarketActivity
+
 import com.example.investapp.ui.RealEstateActivity
 import com.example.investapp.ui.RetirementActivity
 import com.example.investapp.ui.productsActivity

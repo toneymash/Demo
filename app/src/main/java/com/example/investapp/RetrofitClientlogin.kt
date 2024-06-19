@@ -5,8 +5,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 
-object RetrofitClient {
-   private const val BASE_URL = "https://cf47-41-90-101-26.ngrok-free.app/"
+object RetrofitClientlogin {
+   private const val BASE_URL = "https://cf47-41-90-101-26.ngrok-free.app/"//http://10.20.33.90:8080
 
    private val logging = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
