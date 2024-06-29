@@ -15,7 +15,18 @@
         android:theme="@style/Theme.Investapp"
         tools:targetApi="31">
         <activity
+            android:name=".ui.moredetails.moredetails"
+            android:exported="false" />
+        <activity
+            android:name=".ui.personaldetails.PersonalDetails"
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".ui.landingpage" -->
+        <!-- android:exported="false" /> -->
+        <activity
             android:name=".ui.moneymarketcalculator"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".ui.Reset_password"
@@ -39,19 +50,6 @@
             android:name=".ui.RetirementActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.retirement"
-            android:exported="false" />
-        <activity
-            android:name=".ProductsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.personal_details"
-            android:exported="false" />
-        <activity
-            android:name=".ui.settings.SettingsActivity"
-            android:exported="false"
-            android:label="@string/title_activity_settings" />
-        <activity
             android:name=".onNavigationItemSelected"
             android:exported="false" />
         <activity
@@ -66,10 +64,7 @@
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
+            android:name=".ui.landingpage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

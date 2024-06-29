@@ -83,4 +83,5 @@ dependencies {
 
 
     testImplementation ("junit:junit:4.13.2'")
+    implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 }

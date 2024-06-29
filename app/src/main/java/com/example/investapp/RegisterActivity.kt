@@ -12,7 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.investapp.api.RegisterRequest
 import com.example.investapp.api.RegisterResponse
 import com.example.investapp.api.RetrofitClient
-import com.example.investapp.ui.personal_details
+import com.example.investapp.ui.personaldetails.PersonalDetails
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -43,8 +43,8 @@ class RegisterActivity : AppCompatActivity() {
             val email = editTextEmail.text.toString()
             val password = editTextPassword.text.toString()
             val phoneNumber = editTextPhoneNumber.text.toString()
-            val intent = Intent(this, personal_details::class.java)
-            startActivity(intent)
+            val intent = Intent(this@RegisterActivity, PersonalDetails::class.java)
+             startActivity(intent)
 
             if (firstName.isNotEmpty() && lastName.isNotEmpty() && idNumber.isNotEmpty() &&
                 email.isNotEmpty() && password.isNotEmpty() && phoneNumber.isNotEmpty()
@@ -55,6 +55,8 @@ class RegisterActivity : AppCompatActivity() {
                     override fun onResponse(call: Call<RegisterResponse>, response: Response<RegisterResponse>) {
                         if (response.isSuccessful) {
                             Toast.makeText(this@RegisterActivity, "Register successful", Toast.LENGTH_SHORT).show()
+                        //    val intent = Intent(this@RegisterActivity, PersonalDetails::class.java)
+                          //  startActivity(intent)
                         } else {
                             Toast.makeText(this@RegisterActivity, "Registration failed", Toast.LENGTH_SHORT).show()
                         }

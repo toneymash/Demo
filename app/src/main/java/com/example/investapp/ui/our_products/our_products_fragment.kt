@@ -1,74 +1,62 @@
 package com.example.investapp.ui.our_products
 
-import android.content.Intent
+import Our_ProductsViewModel
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import android.widget.ProgressBar
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.investapp.R
-import com.example.investapp.databinding.FragmentOurProductsBinding
-import com.example.investapp.ui.MoneyMarketActivity
 
-import com.example.investapp.ui.RealEstateActivity
-import com.example.investapp.ui.RetirementActivity
-import com.example.investapp.ui.productsActivity
+class Our_ProductsFragment : Fragment() {
+    private lateinit var viewModel: Our_ProductsViewModel
+    private lateinit var adapter: ProductAdapter
+    private lateinit var swipeRefreshLayout: SwipeRefreshLayout
+    private lateinit var loadingProgressBar: ProgressBar
 
-
-class our_products : Fragment() {
-    private lateinit var binding: FragmentOurProductsBinding
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        binding = FragmentOurProductsBinding.inflate(layoutInflater)
-
-        return binding.root
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return inflater.inflate(R.layout.fragment_our_products, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupClickListeners()
-    }
-    private fun setupClickListeners() {
-        binding.bondsItem
-            .setOnClickListener {
-            val intent = Intent(activity, productsActivity::class.java)
-            startActivity(intent)
+
+        viewModel = ViewModelProvider(this).get(Our_ProductsViewModel::class.java)
+
+        val recyclerView = view.findViewById<RecyclerView>(R.id.productsRecyclerView)
+        swipeRefreshLayout = view.findViewById(R.id.swipeRefreshLayout)
+        loadingProgressBar = view.findViewById(R.id.loadingProgressBar)
+
+        adapter = ProductAdapter(emptyList())
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(context)
+
+        swipeRefreshLayout.setOnRefreshListener {
+            viewModel.fetchProducts()
         }
 
-      binding.retirementItem.setOnClickListener {
-          val intent = Intent(activity, RetirementActivity::class.java)
-            startActivity(intent)
-      }
-
-     binding.moneyMarketItem.setOnClickListener {
-            val intent = Intent(activity, MoneyMarketActivity::class.java)
-            startActivity(intent)
-    }
-
-      binding.realEstateItem.setOnClickListener {
-         val intent = Intent(activity, RealEstateActivity::class.java)
-           startActivity(intent)
+        viewModel.products.observe(viewLifecycleOwner) { products ->
+            adapter.updateProducts(products)
+            swipeRefreshLayout.isRefreshing = false
+            loadingProgressBar.visibility = View.GONE
         }
+
+        viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
+            loadingProgressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+        }
+
+        viewModel.error.observe(viewLifecycleOwner) { errorMessage ->
+            errorMessage?.let {
+                Toast.makeText(context, it, Toast.LENGTH_LONG).show()
+            }
+        }
+
+        viewModel.fetchProducts()
     }
-
-
-
-    private fun inflateUI(){
-
-//        val intent = Intent(activity, ProductsActivity::class.java)
-//        startActivity(intent)
-////        binding.tvProfile.text = View.VISIBLE
-    }
-
 }
