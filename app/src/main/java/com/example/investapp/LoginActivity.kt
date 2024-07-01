@@ -5,11 +5,13 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.investapp.ui.emailverification.EmailVerificationActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -31,6 +33,15 @@ class LoginActivity : AppCompatActivity() {
         val editemail = findViewById<EditText>(R.id.editemail)
         val buttonRegister = findViewById<Button>(R.id.buttonRegister)
         val buttonLogin = findViewById<Button>(R.id.buttonLogin)
+        val forgotpass=findViewById<TextView>(R.id.forgot)
+
+        forgotpass.setOnClickListener{
+            val intent = Intent(this, EmailVerificationActivity::class.java)
+            startActivity(intent)
+
+        }
+
+
 
         buttonLogin.setOnClickListener {
             val email = editemail.text.toString().trim()

@@ -5,44 +5,46 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ForgotPasswordActivity">
+    tools:context=".ui.EmailVerificationActivity">
 
     <TextView
-        android:background="@color/white"
+
+        android:background="@drawable/border"
         android:id="@+id/textViewEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="16dp"
-        android:text="Please enter yor Email"
+        android:text="Please enter your Email"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextOtp"
+        app:layout_constraintBottom_toTopOf="@+id/emailEditText"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.802"
         tools:layout_editor_absoluteX="-16dp" />
 
     <EditText
-        android:background="#A5A2A2"
-        android:id="@+id/editTextOtp"
+        android:background="@drawable/border"
+        android:id="@+id/emailEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
-        android:hint="Enter your email"
+        android:hint="Email"
         android:inputType="number"
         android:padding="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonVerifyOtp"
+        app:layout_constraintBottom_toTopOf="@+id/submitButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/buttonVerifyOtp"
+        android:textSize="25sp"
+        android:id="@+id/submitButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="280dp"
-        android:background="#E91E63"
+        android:layout_marginBottom="260dp"
+        android:background="#F44336"
         android:padding="16dp"
-        android:text="NEXT"
+        android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

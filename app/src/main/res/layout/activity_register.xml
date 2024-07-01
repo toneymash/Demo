@@ -6,19 +6,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/b1"
+    android:layout_margin="20dp"
     tools:context=".MainActivity">
 
     <EditText
         android:id="@+id/edittextfirstname"
-        android:layout_width="match_parent"
+        android:layout_width="333dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border"
         android:hint="First Name"
         android:inputType="text"
         android:textColorHint="@color/black" />
 
     <EditText
+        android:background="@drawable/border"
         android:id="@+id/edittextlastname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,6 +33,7 @@
         android:textColorHint="@color/black" />
 
     <EditText
+        android:background="@drawable/border"
         android:id="@+id/edittextemail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,6 +45,7 @@
         android:textColorHint="@color/black" />
 
     <EditText
+        android:background="@drawable/border"
         android:id="@+id/edittextphonenumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,6 +57,7 @@
         android:textColorHint="@color/black" />
 
     <EditText
+        android:background="@drawable/border"
         android:id="@+id/edittextidNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -69,6 +75,10 @@
         android:layout_below="@id/edittextidNumber"
         android:layout_margin="20dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="61dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/border"
         android:hint="Password"
         android:inputType="textPassword"
         android:textColorHint="@color/black" />

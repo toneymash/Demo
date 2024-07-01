@@ -49,7 +49,7 @@ class HomeFragment : Fragment() {
 
 
         val imagesAndTexts = listOf(
-            Pair(R.drawable.image1, "welcome for Image 1"),
+            Pair(R.drawable.image1, "government bonds this are  this that willl bbrrr this is for testing purporse not a bid deal mehn"),
             Pair(R.drawable.image2, "goodbye for Image 2"),
             Pair(R.drawable.image3, "Text for Image 3") ,
             Pair(R.drawable.image2, "goodbye for Image 2"),
