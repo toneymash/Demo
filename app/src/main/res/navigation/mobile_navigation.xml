@@ -13,6 +13,7 @@
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 
+
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.investapp.ui.slideshow.SlideshowFragment"
@@ -38,9 +39,13 @@
         android:name="com.example.investapp.ui.Advisor.AdvisorFragment"
         android:label="AdvisorFragment" />
     <fragment
-        android:id="@+id/nav_settings"
-        android:name="com.example.investapp.ui.settings.settingsFragment"
-        android:label="settingsFragment" />
+        android:id="@+id/nav_news"
+        android:name="com.example.investapp.ui.appnews.newsFragment"
+        android:label="newsFragment" />
+    <fragment
+        android:id="@+id/nav_dashboard"
+        android:name="com.example.investapp.ui.dashboard.DashboardFragment"
+        android:label="dashboardFragment" />
     <fragment
         android:id="@+id/nav_help"
         android:name="com.example.investapp.ui.help.helpFragment"
@@ -50,9 +55,10 @@
         android:name="com.example.investapp.ui.share.shareFragment"
         android:label="shareFragment" />
     <fragment
-        android:id="@+id/nav_feedback"
-        android:name="com.example.investapp.ui.feedback.feedbackFragment"
-        android:label="@string/menu_feedback" />
+        android:id="@+id/nav_logout"
+        android:name="com.example.investapp.ui.logout.logoutFragment"
+        android:label="@string/menu_logout" />
+
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.investapp.MainFragment"

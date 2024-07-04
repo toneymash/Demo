@@ -22,14 +22,15 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_profile">profile</string>
-    <string name="menu_accounts">accounts</string>
-    <string name="menu_our_products">our_products</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_accounts">Accounts</string>
+    <string name="menu_our_products">Our_products</string>
     <string name="menu_Advisor">Advisor</string>
-    <string name="menu_settings">settings</string>
-    <string name="menu_help">help</string>
-    <string name="menu_share">share</string>
-    <string name="menu_feedback">feedback</string>
+    <string name="menu_help">Help</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_logout">Logout</string>
+    <string name="menu_dashboard">Dashboard</string>
+    <string name="menu_news">News</string>
 
 
     <!-- Preference Titles -->

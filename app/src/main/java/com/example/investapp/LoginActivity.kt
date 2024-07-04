@@ -1,5 +1,6 @@
 package com.example.investapp
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -47,8 +48,8 @@ class LoginActivity : AppCompatActivity() {
             val email = editemail.text.toString().trim()
             val password = editpassword.text.toString().trim()
 
-          val intent = Intent(this, Home::class.java)
-           startActivity(intent)
+         // val intent = Intent(this, Home::class.java)
+         //  startActivity(intent)
             if (isValidEmail(email) && isValidPassword(password)) {
                 // Perform login using Retrofit
                 performLogin(email, password)
@@ -92,6 +93,13 @@ class LoginActivity : AppCompatActivity() {
 
                         // Check if the token is null
                         if (loginResponse.token != null) {
+
+                            val sharedPref = getSharedPreferences("MyAppPreferences", Context.MODE_PRIVATE)
+                            with(sharedPref.edit()) {
+                                putInt("USER_TOKEN", loginResponse.userId)
+                                apply()
+                                print(loginResponse.userId)
+                            }
                             Toast.makeText(this@LoginActivity, "Login successful! Token: ${loginResponse.token}", Toast.LENGTH_SHORT).show()
                             val intent = Intent(this@LoginActivity, Home::class.java)
                             intent.putExtra("TOKEN", loginResponse.token)

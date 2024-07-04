@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.advisorFragment  -> {
                 // Handle the advisor action
             }
-            R.id.nav_settings -> {
+            R.id.nav_dashboard -> {
                 // Handle the settings action
             }
             R.id.nav_help -> {
@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_share -> {
                 // Handle the share action
             }
-            R.id.nav_feedback -> {
+            R.id.nav_news -> {
                 // Handle the feedback action
             }
         }
