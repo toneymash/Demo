@@ -49,7 +49,7 @@ class HomeFragment : Fragment() {
 
 
         val imagesAndTexts = listOf(
-            Pair(R.drawable.image1, "government bonds this are  this that willl bbrrr this is for testing purporse not a bid deal mehn"),
+            Pair(R.drawable.image1, "  Bonds emerged as crucial financial instruments in the debt markets. "+"Governments and corporations issued these fixed-income securities "+"to raise capital. Investors purchased bonds, which promised regular"+" interest payments and return of principal at maturity. The bonds'"+" creditworthiness was assessed by rating agencies, influencing their perceived risk and yield. "+"As interest rates fluctuated, bond prices adjusted inversely. Various types of bonds, including Treasury, municipal, and corporate, offered different risk-return profiles. Bonds played a vital role in investment portfolios, providing income and stability, especially for risk-averse investors. The secondary bond market facilitated trading, allowing investors to buy and sell bonds before maturity. Overall, bonds served as a cornerstone of the global financial system, balancing the need for capital with investors' desire for steady returns."),
             Pair(R.drawable.image2, "goodbye for Image 2"),
             Pair(R.drawable.image3, "Text for Image 3") ,
             Pair(R.drawable.image2, "goodbye for Image 2"),

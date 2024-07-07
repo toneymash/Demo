@@ -1,5 +1,6 @@
 package com.example.investapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
@@ -10,7 +11,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var drawerLayout: DrawerLayout
@@ -42,11 +42,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-
             R.id.nav_home -> {
                 // Handle the home action
             }
-
             R.id.nav_profile -> {
                 // Handle the profile action
             }
@@ -56,7 +54,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_our_products -> {
                 // Handle the products action
             }
-            R.id.advisorFragment  -> {
+            R.id.advisorFragment -> {
                 // Handle the advisor action
             }
             R.id.nav_dashboard -> {
@@ -71,9 +69,24 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_news -> {
                 // Handle the feedback action
             }
+            R.id.nav_logout -> {
+                logout()
+            }
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    private fun logout() {
+        // Perform logout operations (clear session, tokens, etc.)
+        // For example:
+        // UserSession.clear()
+
+        // Navigate to Login Activity
+        val intent = Intent(this, LoginActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

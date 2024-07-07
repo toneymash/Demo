@@ -1,5 +1,6 @@
 package com.example.investapp.ui.personaldetails
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -8,6 +9,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.investapp.Home
+import com.example.investapp.LoginActivity
 import com.example.investapp.R
 
 class PersonalDetails : AppCompatActivity() {
@@ -70,6 +73,8 @@ class PersonalDetails : AppCompatActivity() {
             if (validateInputs()) {
                 // TODO: Process the form data (e.g., save to database, send to server)
                 Toast.makeText(this, "Form submitted successfully", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
             } else {
                 Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
             }

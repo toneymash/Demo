@@ -12,7 +12,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.investapp.ui.emailverification.EmailVerificationActivity
+import com.example.investapp.ui.otp.EmailActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
         val forgotpass=findViewById<TextView>(R.id.forgot)
 
         forgotpass.setOnClickListener{
-            val intent = Intent(this, EmailVerificationActivity::class.java)
+            val intent = Intent(this, EmailActivity::class.java)
             startActivity(intent)
 
         }
@@ -48,8 +48,8 @@ class LoginActivity : AppCompatActivity() {
             val email = editemail.text.toString().trim()
             val password = editpassword.text.toString().trim()
 
-         // val intent = Intent(this, Home::class.java)
-         //  startActivity(intent)
+        val intent = Intent(this, Home::class.java)
+       startActivity(intent)
             if (isValidEmail(email) && isValidPassword(password)) {
                 // Perform login using Retrofit
                 performLogin(email, password)
@@ -100,7 +100,7 @@ class LoginActivity : AppCompatActivity() {
                                 apply()
                                 print(loginResponse.userId)
                             }
-                            Toast.makeText(this@LoginActivity, "Login successful! Token: ${loginResponse.token}", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@LoginActivity, "Login successful!", Toast.LENGTH_SHORT).show()
                             val intent = Intent(this@LoginActivity, Home::class.java)
                             intent.putExtra("TOKEN", loginResponse.token)
                             startActivity(intent)

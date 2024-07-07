@@ -43,8 +43,8 @@ class RegisterActivity : AppCompatActivity() {
             val email = editTextEmail.text.toString()
             val password = editTextPassword.text.toString()
             val phoneNumber = editTextPhoneNumber.text.toString()
-            val intent = Intent(this@RegisterActivity, PersonalDetails::class.java)
-             startActivity(intent)
+           // val intent = Intent(this@RegisterActivity, PersonalDetails::class.java)
+           //  startActivity(intent)
 
             if (firstName.isNotEmpty() && lastName.isNotEmpty() && idNumber.isNotEmpty() &&
                 email.isNotEmpty() && password.isNotEmpty() && phoneNumber.isNotEmpty()
@@ -55,14 +55,17 @@ class RegisterActivity : AppCompatActivity() {
                     override fun onResponse(call: Call<RegisterResponse>, response: Response<RegisterResponse>) {
                         if (response.isSuccessful) {
                             Toast.makeText(this@RegisterActivity, "Register successful", Toast.LENGTH_SHORT).show()
-                        //    val intent = Intent(this@RegisterActivity, PersonalDetails::class.java)
-                          //  startActivity(intent)
+                           val intent = Intent(this@RegisterActivity, PersonalDetails::class.java)
+                           startActivity(intent)
                         } else {
+
                             Toast.makeText(this@RegisterActivity, "Registration failed", Toast.LENGTH_SHORT).show()
                         }
                     }
 
                     override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
+                        print(t);
+
                         Toast.makeText(this@RegisterActivity, "API call failed: ${t.message}", Toast.LENGTH_SHORT).show()
                     }
                 })

@@ -14,30 +14,30 @@
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="3dp">
+        tools:layout_editor_absoluteX="9dp"
+        tools:layout_editor_absoluteY="-27dp">
 
 
         <TextView
             android:id="@+id/text1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:background="#2D9C27B0"
             android:text="welcome back"
             android:textColor="@color/black"
             android:textSize="30dp"
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.588"
+            app:layout_constraintHorizontal_bias="0.583"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/editemail"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="188dp"
             android:background="@drawable/border"
             android:hint="Email"
             android:inputType="text"
@@ -49,11 +49,11 @@
             app:layout_constraintTop_toBottomOf="@+id/text1" />
 
         <EditText
-            android:background="@drawable/border"
             android:id="@+id/editTextpassword"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="12dp"
+            android:background="@drawable/border"
             android:hint="Password"
             android:inputType="textPassword"
             android:textColorHint="@color/black"
@@ -63,11 +63,11 @@
             app:layout_constraintTop_toBottomOf="@+id/editemail" />
 
         <Button
-            android:background="#2196F3"
             android:id="@+id/buttonLogin"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
+            android:background="#2196F3"
             android:text="Login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.052"
@@ -86,6 +86,7 @@
             app:layout_constraintTop_toBottomOf="@+id/editTextpassword" />
 
         <TextView
+
             android:id="@+id/forgot"
             android:layout_width="224dp"
             android:layout_height="wrap_content"
@@ -118,11 +119,12 @@
             android:id="@+id/imageView2"
             android:layout_width="107dp"
             android:layout_height="109dp"
+            android:layout_marginTop="92dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.164"
+            app:layout_constraintHorizontal_bias="0.533"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/zxy" />
+            app:srcCompat="@drawable/lg1" />
 
         <TextView
             android:id="@+id/textView9"

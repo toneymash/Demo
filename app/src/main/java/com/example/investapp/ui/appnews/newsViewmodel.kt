@@ -1,13 +1,37 @@
-package com.example.investapp.ui.setting
+package com.example.investapp.ui.appnews
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 
 class NewsViewModel : ViewModel() {
+    private val repository = NewsRepository(RetrofitClient.newsApiService)
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is news Fragment"
+    private val _news = MutableStateFlow<List<NewsItem>>(emptyList())
+    val news: StateFlow<List<NewsItem>> = _news
+
+    private val _isLoading = MutableStateFlow(false)
+    val isLoading: StateFlow<Boolean> = _isLoading
+
+    private val _error = MutableStateFlow<String?>(null)
+    val error: StateFlow<String?> = _error
+
+    fun fetchNews() {
+        viewModelScope.launch {
+            _isLoading.value = true
+            _error.value = null
+            try {
+                _news.value = repository.getNews()
+            } catch (e: Exception) {
+
+                print(e);
+
+                _error.value = "Failed to fetch news: ${e.message}"
+            } finally {
+                _isLoading.value = false
+            }
+        }
     }
-    val text: LiveData<String> = _text
 }

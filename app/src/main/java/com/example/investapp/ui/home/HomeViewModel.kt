@@ -23,14 +23,31 @@ class HomeViewModel : ViewModel() {
     }
     val items: LiveData<List<String>> = _items
 
-    // Function to get the text with items appended
-    private fun getTextWithItems(): String {
-        val itemsText = _items.value?.joinToString(separator = "\n") { "\"$it\"" }
-        return "$INITIAL_TEXT\n$itemsText"
-    }
+    // Data class to hold both text and items
+    data class HomeData(val text: String, val items: List<String>)
+
+    // LiveData for HomeData
+    private val _homeData = MutableLiveData<HomeData>()
+    val homeData: LiveData<HomeData> = _homeData
 
     init {
-        // Update the text LiveData with the combined text and items
-        _text.value = getTextWithItems()
+        updateHomeData()
+    }
+
+    // Function to update HomeData
+    private fun updateHomeData() {
+        _homeData.value = HomeData(_text.value ?: "", _items.value ?: emptyList())
+    }
+
+    // Function to update text
+    fun updateText(newText: String) {
+        _text.value = newText
+        updateHomeData()
+    }
+
+    // Function to update items
+    fun updateItems(newItems: List<String>) {
+        _items.value = newItems
+        updateHomeData()
     }
 }
