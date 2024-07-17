@@ -1,6 +1,6 @@
 package com.example.investapp.ui.our_products
-
 import Our_ProductsViewModel
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -20,14 +20,21 @@ class Our_ProductsFragment : Fragment() {
     private lateinit var swipeRefreshLayout: SwipeRefreshLayout
     private lateinit var loadingProgressBar: ProgressBar
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        // Initialize the repository and ViewModelFactory
+        val repository = ProductRepository(context.applicationContext)
+        val viewModelFactory = OurProductsViewModelFactory(repository)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(Our_ProductsViewModel::class.java)
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_our_products, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        viewModel = ViewModelProvider(this).get(Our_ProductsViewModel::class.java)
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.productsRecyclerView)
         swipeRefreshLayout = view.findViewById(R.id.swipeRefreshLayout)

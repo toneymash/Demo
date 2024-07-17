@@ -3,8 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,6 +17,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Investapp"
         tools:targetApi="31">
+
+        <activity
+            android:name=".ui.resetpassword.ResetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.Reset_password"
+            android:exported="false" />
         <activity
             android:name=".ui.otp.EmailActivity"
             android:exported="false" />
@@ -21,10 +31,10 @@
             android:name=".ui.AccountsActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.TransactionActivity"
+            android:name=".ui.Transaction.TransactionActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.BuyActivity"
+            android:name=".ui.mpesa.BuyActivity"
             android:exported="false" />
         <activity
             android:name=".ui.OtpVerificationActivity"
@@ -43,15 +53,14 @@
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
-        <activity
-            android:name=".ui.Reset_password"
-            android:exported="false" />
+
         <activity
             android:name=".ui.emailverification.EmailVerificationActivity"
             android:exported="false" />
         <activity
             android:name=".calcutor"
             android:exported="false" />
+
         <activity
             android:name=".ui.productsActivity"
             android:exported="false" />

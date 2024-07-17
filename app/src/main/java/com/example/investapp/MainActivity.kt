@@ -11,9 +11,13 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import android.content.Context
+import android.content.SharedPreferences
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var drawerLayout: DrawerLayout
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +28,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        // Initialize SharedPreferences
+        sharedPreferences = getSharedPreferences("mySession", Context.MODE_PRIVATE)
 
         drawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
@@ -78,9 +85,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun logout() {
-        // Perform logout operations (clear session, tokens, etc.)
-        // For example:
-        // UserSession.clear()
+        // Clear the shared preferences
+        val editor = sharedPreferences.edit()
+        editor.clear()
+        editor.apply()
+
+        // Show a toast message
+        Toast.makeText(this, "Logged out successfully", Toast.LENGTH_SHORT).show()
 
         // Navigate to Login Activity
         val intent = Intent(this, LoginActivity::class.java)

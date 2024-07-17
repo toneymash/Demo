@@ -10,8 +10,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.investapp.Home
 import com.example.investapp.R
 import com.example.investapp.ui.OtpVerificationActivity
+import com.example.investapp.ui.Reset_password
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -41,6 +43,7 @@ class EmailVerificationActivity : AppCompatActivity() {
 
     private fun setupListeners() {
         submitButton.setOnClickListener { verifyEmail() }
+
     }
 
     private fun verifyEmail() {

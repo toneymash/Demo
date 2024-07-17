@@ -4,9 +4,11 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import java.util.concurrent.TimeUnit
 
 object RetrofitClientlogin {
-    private const val BASE_URL = "https://investmentapp.onrender.com/"//http://10.20.33.90:8080
+    private const val BASE_URL = "https://493c-41-90-101-26.ngrok-free.app/"//http://10.20.33.90:8080
+    private const val TIMEOUT = 30L // 30 seconds
 
     private val logging = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
@@ -14,6 +16,9 @@ object RetrofitClientlogin {
 
     private val client = OkHttpClient.Builder()
         .addInterceptor(logging)
+        .connectTimeout(TIMEOUT, TimeUnit.SECONDS)
+        .readTimeout(TIMEOUT, TimeUnit.SECONDS)
+        .writeTimeout(TIMEOUT, TimeUnit.SECONDS)
         .build()
 
     val instance: Retrofit by lazy {

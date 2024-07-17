@@ -2,6 +2,7 @@ package com.example.investapp.ui.profile
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,13 +10,24 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.investapp.databinding.FragmentProfileBinding
 import android.widget.Toast
-
+import androidx.lifecycle.ViewModelProvider
+import com.example.investapp.Constants
+import com.example.investapp.TokenManager
 
 class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: ProfileViewModel by viewModels()
+    private lateinit var viewModel: ProfileViewModel
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+//        val tokenManager = TokenManager(context)
+        val repository = ProfileRepository(context)
+        val viewModelFactory = ProfileViewModelFactory(repository)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(ProfileViewModel::class.java)
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
@@ -26,9 +38,13 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val sharedPref = requireActivity().getSharedPreferences("MyAppPreferences", Context.MODE_PRIVATE)
-        val id = sharedPref.getInt("USER_TOKEN", 7).toString()
+        val id = sharedPref.getInt("USER_ID", -1).toString()
 
-        viewModel.fetchUserProfile(id)
+        val token  = Constants.TOKEN
+
+        Log.e("hehehe","${token}")
+
+        viewModel.fetchUserProfile(id, token)
 
         viewModel.userProfile.observe(viewLifecycleOwner) { profile ->
             profile?.let { updateUI(it) }
@@ -53,7 +69,7 @@ class ProfileFragment : Fragment() {
             tvNationality.text = profile.nationality
             tvPostalAddress.text = profile.postalAddress
             tvDateOfBirth.text = profile.dateOfBirth
-            tvIdPassportNo.text = profile.idPassportNo
+            tvIdPassportNo.text = profile.idpassportNo
             tvAccountName.text = profile.accountName
             tvAccountType.text = profile.accountType
             tvBankName.text = profile.bankName

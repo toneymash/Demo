@@ -1,15 +1,19 @@
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.example.investapp.ui.our_products.Product
+import com.example.investapp.ui.our_products.ProductRepository
 import com.example.investapp.ui.our_products.RetrofitClient
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import java.io.IOException
 
-class Our_ProductsViewModel : ViewModel() {
+class Our_ProductsViewModel(private val repository: ProductRepository) : ViewModel() {
     private val _products = MutableLiveData<List<Product>>()
     val products: LiveData<List<Product>> = _products
 
@@ -25,9 +29,9 @@ class Our_ProductsViewModel : ViewModel() {
             var retryCount = 0
             while (retryCount < maxRetries) {
                 try {
-                    val fetchedProducts = RetrofitClient.apiService.getProducts()
+                    val fetchedProducts = repository.fetchProducts()
                     _products.value = fetchedProducts
-                    _error.value = null
+
                     break
                 } catch (e: Exception) {
                     when (e) {

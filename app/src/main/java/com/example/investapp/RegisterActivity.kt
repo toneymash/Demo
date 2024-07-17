@@ -43,7 +43,7 @@ class RegisterActivity : AppCompatActivity() {
             val email = editTextEmail.text.toString()
             val password = editTextPassword.text.toString()
             val phoneNumber = editTextPhoneNumber.text.toString()
-           // val intent = Intent(this@RegisterActivity, PersonalDetails::class.java)
+         //  val intent = Intent(this@RegisterActivity, PersonalDetails::class.java)
            //  startActivity(intent)
 
             if (firstName.isNotEmpty() && lastName.isNotEmpty() && idNumber.isNotEmpty() &&

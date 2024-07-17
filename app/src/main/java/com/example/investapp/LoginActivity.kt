@@ -12,12 +12,15 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.investapp.ui.otp.EmailActivity
+import com.google.android.gms.common.util.SharedPreferencesUtils
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
+
+
+    private lateinit var tokenManager: TokenManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -30,6 +33,8 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
+        tokenManager = TokenManager(this)
+
         val editpassword = findViewById<EditText>(R.id.editTextpassword)
         val editemail = findViewById<EditText>(R.id.editemail)
         val buttonRegister = findViewById<Button>(R.id.buttonRegister)
@@ -37,7 +42,7 @@ class LoginActivity : AppCompatActivity() {
         val forgotpass=findViewById<TextView>(R.id.forgot)
 
         forgotpass.setOnClickListener{
-            val intent = Intent(this, EmailActivity::class.java)
+            val intent = Intent(this, Home::class.java)
             startActivity(intent)
 
         }
@@ -48,8 +53,8 @@ class LoginActivity : AppCompatActivity() {
             val email = editemail.text.toString().trim()
             val password = editpassword.text.toString().trim()
 
-        val intent = Intent(this, Home::class.java)
-       startActivity(intent)
+            //val intent = Intent(this, Home::class.java)
+           // startActivity(intent)
             if (isValidEmail(email) && isValidPassword(password)) {
                 // Perform login using Retrofit
                 performLogin(email, password)
@@ -76,7 +81,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun isValidPassword(password: String): Boolean {
         // Password should not be empty and should be at least 6 characters long (you can adjust this)
-        return password.isNotEmpty() && password.length >= 6
+        return password.isNotEmpty() && password.length >= 3
     }
 
     private fun performLogin(email: String, password: String) {
@@ -94,12 +99,17 @@ class LoginActivity : AppCompatActivity() {
                         // Check if the token is null
                         if (loginResponse.token != null) {
 
-                            val sharedPref = getSharedPreferences("MyAppPreferences", Context.MODE_PRIVATE)
-                            with(sharedPref.edit()) {
-                                putInt("USER_TOKEN", loginResponse.userId)
-                                apply()
-                                print(loginResponse.userId)
-                            }
+                            tokenManager.saveToken(loginResponse.token, loginResponse.token)
+                            val token = loginResponse.token
+
+                            Log.e("TAG", "${token}")
+
+                            Constants.TOKEN = token
+
+
+
+                            println("Token saved")
+                            println("User ID: ${loginResponse.userId}")
                             Toast.makeText(this@LoginActivity, "Login successful!", Toast.LENGTH_SHORT).show()
                             val intent = Intent(this@LoginActivity, Home::class.java)
                             intent.putExtra("TOKEN", loginResponse.token)

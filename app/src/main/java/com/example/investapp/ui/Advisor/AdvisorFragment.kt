@@ -30,6 +30,6 @@ class AdvisorFragment : Fragment() {
 
     private fun inflateUI() {
         // Example of setting a text view visibility
-        binding.tvadvisor.visibility = View.VISIBLE
+        binding.tvName.visibility = View.VISIBLE
     }
 }

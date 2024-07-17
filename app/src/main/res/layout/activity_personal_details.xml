@@ -5,156 +5,257 @@
     android:id="@+id/PersonalDetailsActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D521D4F3"
     tools:context=".ui.personaldetails.PersonalDetails">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
+
         <TextView
+            android:textStyle="bold"
             android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pesron details"
+            android:text="Personal Details"
             android:textSize="30sp"
-            android:layout_margin="20dp"
-            />
+            android:layout_margin="20dp" />
 
         <EditText
+            android:background="@drawable/boarder3"
             android:textColor="@color/black"
             android:id="@+id/surname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Surname"/>
+            android:hint="Surname" />
 
         <EditText
+            android:background="@drawable/boarder3"
             android:textColor="@color/black"
             android:id="@+id/middleName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Middle Name"/>
+            android:hint="Middle Name" />
 
         <EditText
+            android:background="@drawable/boarder3"
             android:textColor="@color/black"
             android:id="@+id/firstName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="First Name"/>
+            android:hint="First Name" />
 
         <EditText
+            android:background="@drawable/boarder3"
             android:textColor="@color/black"
             android:id="@+id/dateOfBirth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Date of Birth"/>
+            android:hint="Date of Birth" />
 
         <EditText
+            android:background="@drawable/boarder3"
+            android:id="@+id/idpassportNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="passport/id" />
+
+        <EditText
+            android:background="@drawable/boarder3"
             android:textColor="@color/black"
             android:id="@+id/nationality"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nationality"/>
+            android:hint="Nationality" />
 
         <EditText
+            android:background="@drawable/boarder3"
             android:textColor="@color/black"
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"/>
+            android:hint="Email" />
 
         <EditText
+            android:background="@drawable/boarder3"
             android:textColor="@color/black"
             android:id="@+id/postalAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Postal Address"/>
+            android:hint="Postal Address" />
 
         <TextView
             android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bank details"
-            android:textSize="30sp"
-            />
+            android:text="Bank Details"
+            android:textSize="30sp" />
+
         <EditText
+            android:background="@drawable/boarder3"
             android:textColor="@color/black"
             android:id="@+id/accountName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Account Name"/>
+            android:hint="Account Name" />
 
         <EditText
+            android:background="@drawable/boarder3"
             android:textColor="@color/black"
             android:id="@+id/accountNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Account Number"/>
+            android:hint="Account Number" />
 
         <EditText
+            android:background="@drawable/boarder3"
             android:textColor="@color/black"
             android:id="@+id/accountType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Account Type"/>
+            android:hint="Account Type" />
 
         <EditText
+            android:background="@drawable/boarder3"
+            android:id="@+id/bankName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Bankname" />
+
+        <EditText
+            android:background="@drawable/boarder3"
             android:textColor="@color/black"
             android:id="@+id/bankBranch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Bank Branch"/>
+            android:hint="Bank Branch" />
 
         <EditText
+            android:background="@drawable/boarder3"
             android:textColor="@color/black"
             android:id="@+id/bankCode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Bank Code"/>
+            android:hint="Bank Code" />
 
         <EditText
+            android:background="@drawable/boarder3"
             android:textColor="@color/black"
             android:id="@+id/mpesaNo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Mpesa Number"/>
+            android:hint="Mpesa Number" />
 
         <TextView
+            android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="30sp"
-
-            android:id="@+id/kin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Next of kin"/>
+            android:hint="Next of kin" />
+        <EditText
+            android:background="@drawable/boarder3"
+            android:id="@+id/nextOfKinName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="Next of kin name"
+            />
 
         <EditText
+            android:background="@drawable/boarder3"
             android:textColor="@color/black"
-            android:id="@+id/Relationship"
+            android:id="@+id/nextOfKinRelationship"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Relationship"/>
+            android:hint="Relationship" />
 
         <EditText
+            android:background="@drawable/boarder3"
             android:textColor="@color/black"
             android:id="@+id/id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="id/passport"/>
+            android:hint="id/passport" />
 
         <EditText
+
+            android:background="@drawable/boarder3"
             android:id="@+id/telephone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Telephone no"/>
+            android:hint="Telephone no" />
+
+
         <Button
+            android:layout_margin="10dp"
+            android:background="#CDDC39"
+
+            android:id="@+id/btnPickFrontId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick Front ID Image" />
+
+        <Button
+            android:layout_margin="10dp"
+            android:background="#CDDC39"
+            android:id="@+id/btnPickBackId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick Back ID Image" />
+
+        <!-- TextViews to display selected image paths -->
+        <TextView
+            android:background="@drawable/boarder3"
+            android:id="@+id/tvIdPictureFrontPath"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Front ID Image Path"
+            android:visibility="gone" />
+
+        <TextView
+            android:background="@drawable/boarder3"
+            android:id="@+id/tvIdPictureBackPath"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back ID Image Path"
+            android:visibility="gone" />
+
+        <!-- Image views to display selected images -->
+        <ImageView
+            android:background="@drawable/boarder3"
+            android:id="@+id/ivFrontIdPicture"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="Front ID Image"
+            android:scaleType="centerCrop"
+            android:visibility="gone" />
+
+        <ImageView
+            android:background="@drawable/boarder3"
+            android:id="@+id/ivBackIdPicture"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="Back ID Image"
+            android:scaleType="centerCrop"
+            android:visibility="gone" />
+
+        <!-- Progress bar -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+        <Button
+            android:background="#CDDC39"
             android:textColor="@color/black"
             android:layout_margin="20dp"
             android:id="@+id/btn_submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="submit"
-            />
-
+            android:text="submit" />
     </LinearLayout>
-
 </ScrollView>
