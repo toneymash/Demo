@@ -1,6 +1,5 @@
 package com.example.investapp
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -12,21 +11,20 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.google.android.gms.common.util.SharedPreferencesUtils
+import com.example.investapp.ui.otp.EmailActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
 
-
     private lateinit var tokenManager: TokenManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
 
-        // Apply window insets for edge-to-edge display
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -39,24 +37,18 @@ class LoginActivity : AppCompatActivity() {
         val editemail = findViewById<EditText>(R.id.editemail)
         val buttonRegister = findViewById<Button>(R.id.buttonRegister)
         val buttonLogin = findViewById<Button>(R.id.buttonLogin)
-        val forgotpass=findViewById<TextView>(R.id.forgot)
+        val forgotpass = findViewById<TextView>(R.id.forgot)
 
-        forgotpass.setOnClickListener{
-            val intent = Intent(this, Home::class.java)
+        forgotpass.setOnClickListener {
+            val intent = Intent(this, EmailActivity::class.java)
             startActivity(intent)
-
         }
-
-
 
         buttonLogin.setOnClickListener {
             val email = editemail.text.toString().trim()
             val password = editpassword.text.toString().trim()
 
-            //val intent = Intent(this, Home::class.java)
-           // startActivity(intent)
             if (isValidEmail(email) && isValidPassword(password)) {
-                // Perform login using Retrofit
                 performLogin(email, password)
             } else {
                 if (!isValidEmail(email)) {
@@ -74,13 +66,11 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun isValidEmail(email: String): Boolean {
-        // Regular expression for validating email
         val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
         return email.matches(emailPattern.toRegex())
     }
 
     private fun isValidPassword(password: String): Boolean {
-        // Password should not be empty and should be at least 6 characters long (you can adjust this)
         return password.isNotEmpty() && password.length >= 3
     }
 
@@ -93,23 +83,19 @@ class LoginActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val loginResponse = response.body()
                     if (loginResponse != null) {
-                        // Log the raw response
                         Log.d("LoginActivity", "LoginResponse: ${response.body()}")
 
-                        // Check if the token is null
                         if (loginResponse.token != null) {
-
-                            tokenManager.saveToken(loginResponse.token, loginResponse.token)
+                            tokenManager.saveToken(loginResponse.token,
+                                loginResponse.userId.toString(), loginResponse.phoneNumber)
                             val token = loginResponse.token
 
                             Log.e("TAG", "${token}")
-
                             Constants.TOKEN = token
-
-
 
                             println("Token saved")
                             println("User ID: ${loginResponse.userId}")
+                            println("Phone Number: ${loginResponse.phoneNumber}")
                             Toast.makeText(this@LoginActivity, "Login successful!", Toast.LENGTH_SHORT).show()
                             val intent = Intent(this@LoginActivity, Home::class.java)
                             intent.putExtra("TOKEN", loginResponse.token)

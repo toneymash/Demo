@@ -8,10 +8,11 @@ class TokenManager(private val context: Context) {
         context.getSharedPreferences("your_app_prefs", Context.MODE_PRIVATE)
     }
 
-    fun saveToken(token: String, userId: String) {
+    fun saveToken(token: String, userId: String, phoneNumber: String) {
         with(sharedPreferences.edit()) {
             putString("token", token)
             putString("userId", userId)
+            putString("phoneNumber", phoneNumber)
             apply()
         }
     }
@@ -24,10 +25,15 @@ class TokenManager(private val context: Context) {
         return sharedPreferences.getString("userId", null)
     }
 
+    fun getPhoneNumber(): String? {
+        return sharedPreferences.getString("phoneNumber", null)
+    }
+
     fun clearToken() {
         with(sharedPreferences.edit()) {
             remove("token")
             remove("userId")
+            remove("phoneNumber")
             apply()
         }
     }

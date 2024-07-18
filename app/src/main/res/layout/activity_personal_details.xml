@@ -127,7 +127,7 @@
         <EditText
             android:background="@drawable/boarder3"
             android:textColor="@color/black"
-            android:id="@+id/bankBranch"
+            android:id="@+id/branch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Bank Branch" />

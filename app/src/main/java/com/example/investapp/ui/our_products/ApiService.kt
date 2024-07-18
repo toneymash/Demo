@@ -4,7 +4,7 @@ import retrofit2.http.Header
 import retrofit2.http.Path
 
 interface ApiService {
-    @GET("/api/funds")
+    @GET("/api/open/funds")
     suspend fun getProducts(
         @Header("Authorization") authToken: String
     ): List<Product>

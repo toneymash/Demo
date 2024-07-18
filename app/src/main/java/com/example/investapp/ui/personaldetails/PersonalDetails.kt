@@ -78,7 +78,7 @@ class PersonalDetails : AppCompatActivity() {
             val fields = listOf(
                 surname, middleName, firstName, dateOfBirth, idpassportNo, nationality,
                 email, postalAddress, accountName, accountNumber, accountType, bankName,
-                bankBranch, bankCode, mpesaNo, nextOfKinName, nextOfKinRelationship, id, telephone
+                branch, bankCode, mpesaNo, nextOfKinName, nextOfKinRelationship, id, telephone
             )
 
             fields.forEach { field ->
@@ -112,7 +112,7 @@ class PersonalDetails : AppCompatActivity() {
                 accountNumber = accountNumber.text.toString(),
                 accountType = accountType.text.toString(),
                 bankName = bankName.text.toString(),
-                bankBranch = bankBranch.text.toString(),
+                branch = branch.text.toString(),
                 bankCode = bankCode.text.toString(),
                 phoneNumber = telephone.text.toString(),
                 idPicture = IdPicture(frontImageUri.toString(), backImageUri.toString()),
