@@ -11,17 +11,11 @@ data class PersonalDetailsRequest(
     val accountNumber: String,
     val accountType: String,
     val bankName: String,
-    val branch: String,
+    val bankBranch: String,
     val bankCode: String,
     val phoneNumber:String,
-    val name: String,
-    val relationship: String,
-    val id: String,
-    val telephone: String,
     val idPicture: IdPicture,
     val nextOfKin: NextOfKin
-
-
 )
 
 data class IdPicture(

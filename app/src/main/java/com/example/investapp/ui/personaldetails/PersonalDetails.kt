@@ -112,7 +112,7 @@ class PersonalDetails : AppCompatActivity() {
                 accountNumber = accountNumber.text.toString(),
                 accountType = accountType.text.toString(),
                 bankName = bankName.text.toString(),
-                branch = branch.text.toString(),
+                bankBranch = branch.text.toString(),
                 bankCode = bankCode.text.toString(),
                 phoneNumber = telephone.text.toString(),
                 idPicture = IdPicture(frontImageUri.toString(), backImageUri.toString()),
