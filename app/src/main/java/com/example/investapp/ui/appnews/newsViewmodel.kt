@@ -1,3 +1,4 @@
+// NewsViewModel.kt
 package com.example.investapp.ui.appnews
 
 import androidx.lifecycle.ViewModel
@@ -25,9 +26,6 @@ class NewsViewModel : ViewModel() {
             try {
                 _news.value = repository.getNews()
             } catch (e: Exception) {
-
-                print(e);
-
                 _error.value = "Failed to fetch news: ${e.message}"
             } finally {
                 _isLoading.value = false

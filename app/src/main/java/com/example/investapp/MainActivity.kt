@@ -61,18 +61,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_our_products -> {
                 // Handle the products action
             }
-            R.id.advisorFragment -> {
-                // Handle the advisor action
-            }
+
             R.id.nav_dashboard -> {
                 // Handle the settings action
             }
             R.id.nav_help -> {
                 // Handle the help action
             }
-            R.id.nav_share -> {
-                // Handle the share action
-            }
+
             R.id.nav_news -> {
                 // Handle the feedback action
             }

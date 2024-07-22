@@ -34,10 +34,7 @@
         android:name="com.example.investapp.ui.our_products.Our_ProductsFragment"
         android:label="@string/menu_our_products"
         tools:layout="@layout/fragment_our_products" />
-    <fragment
-        android:id="@+id/advisorFragment"
-        android:name="com.example.investapp.ui.Advisor.AdvisorFragment"
-        android:label="AdvisorFragment" />
+
     <fragment
         android:id="@+id/nav_news"
         android:name="com.example.investapp.ui.appnews.NewsFragment"
@@ -48,12 +45,9 @@
         android:label="dashboardFragment" />
     <fragment
         android:id="@+id/nav_help"
-        android:name="com.example.investapp.ui.help.helpFragment"
+        android:name="com.example.investapp.ui.help.HelpFragment"
         android:label="helpFragment" />
-    <fragment
-        android:id="@+id/nav_share"
-        android:name="com.example.investapp.ui.share.shareFragment"
-        android:label="shareFragment" />
+
     <fragment
         android:id="@+id/nav_logout"
         android:name="com.example.investapp.ui.logout.LogoutFragment"

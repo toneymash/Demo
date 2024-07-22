@@ -7,7 +7,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import java.util.concurrent.TimeUnit
 
 object RetrofitClientlogin {
-    private const val BASE_URL = "https://ef8f-41-80-112-189.ngrok-free.app/"//http://10.20.33.90:8080
+    private const val BASE_URL = "https://7b8e-41-90-101-26.ngrok-free.app"//http://10.20.33.90:8080
     private const val TIMEOUT = 30L // 30 seconds
 
     private val logging = HttpLoggingInterceptor().apply {

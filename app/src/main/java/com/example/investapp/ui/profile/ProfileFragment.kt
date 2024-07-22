@@ -38,7 +38,7 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val sharedPref = requireActivity().getSharedPreferences("MyAppPreferences", Context.MODE_PRIVATE)
-        val id = sharedPref.getInt("USER_ID", -1).toString()
+        val id = sharedPref.getInt("userId", 1).toString()
 
         val token  = Constants.TOKEN
 

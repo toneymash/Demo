@@ -47,6 +47,8 @@ class LoginActivity : AppCompatActivity() {
         buttonLogin.setOnClickListener {
             val email = editemail.text.toString().trim()
             val password = editpassword.text.toString().trim()
+//       val intent = Intent(this, Home::class.java)
+//        startActivity(intent)
 
             if (isValidEmail(email) && isValidPassword(password)) {
                 performLogin(email, password)

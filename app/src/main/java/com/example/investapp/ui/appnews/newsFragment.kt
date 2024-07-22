@@ -1,3 +1,4 @@
+// NewsFragment.kt
 package com.example.investapp.ui.appnews
 
 import android.os.Bundle
@@ -10,7 +11,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.investapp.databinding.FragmentNewsBinding
-import com.example.investapp.ui.appnewsimport.NewsAdapter
 import kotlinx.coroutines.launch
 
 class NewsFragment : Fragment() {

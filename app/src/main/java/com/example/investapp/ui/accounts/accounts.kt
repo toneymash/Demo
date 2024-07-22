@@ -1,40 +1,38 @@
 package com.example.investapp.ui.accounts
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.investapp.R
+import androidx.fragment.app.Fragment
 import com.example.investapp.databinding.FragmentAccountsBinding
-
+import com.example.investapp.ui.Bank.BankActivity
+import com.example.investapp.ui.Withdraw.WithdrawActivity
+import com.example.investapp.ui.mpesa.BuyActivity
 
 class accountsFragment : Fragment() {
     private lateinit var binding: FragmentAccountsBinding
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        binding = FragmentAccountsBinding.inflate(layoutInflater)
-
+        binding = FragmentAccountsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        inflateUI()
-    }
-    private fun inflateUI(){
-//        binding.tvProfile.text = View.VISIBLE
-    }
+        binding.buttonTopUp.setOnClickListener {
+            val intent = Intent(requireContext(), BuyActivity::class.java)
+            startActivity(intent)
+        }
+        binding.withdraw.setOnClickListener {
+            val intent = Intent(requireContext(), WithdrawActivity::class.java)
+            startActivity(intent)
 
-}
+        }
+    }}
+

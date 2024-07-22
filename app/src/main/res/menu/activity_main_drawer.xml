@@ -35,10 +35,7 @@
             android:id="@+id/nav_our_products"
             android:icon="@drawable/baseline_add_shopping_cart_24"
             android:title="Our_products"/>
-        <item
-            android:id="@+id/advisorFragment"
-            android:icon="@drawable/advisor"
-            android:title="Advisor" />
+
         <item
             android:id="@+id/nav_news"
             android:icon="@drawable/cwx"
@@ -47,10 +44,7 @@
             android:id="@+id/nav_help"
             android:icon="@drawable/help"
             android:title="Help" />
-        <item
-            android:id="@+id/nav_share"
-            android:icon="@drawable/share"
-            android:title="share" />
+
         <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/one"

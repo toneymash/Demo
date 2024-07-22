@@ -3,94 +3,151 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
+    android:layout_marginEnd="40dp"
+    android:layout_marginTop="50dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20dp"
+    android:layout_margin="30dp"
     tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please fill all the credentials"
+        android:textColor="#2196F3" />
+
+    <TextView
+        android:id="@+id/textviewfirstname"
+        android:layout_width="124dp"
+        android:layout_height="23dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="206dp"
+        android:text="First Name" />
 
     <EditText
         android:id="@+id/edittextfirstname"
-        android:layout_width="330dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_below="@id/textviewfirstname"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/border"
-        android:hint="First Name"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="21dp"
+        android:background="@drawable/boarder6"
+        android:hint=" First Name"
         android:inputType="text"
         android:textColorHint="@color/black" />
 
-    <EditText
-        android:id="@+id/edittextlastname"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textviewlastname"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/edittextfirstname"
-        android:layout_margin="20dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="67dp"
+        android:layout_marginTop="20dp"
+        android:text="Last Name" />
+
+    <EditText
+        android:id="@+id/edittextlastname"
+        android:layout_width="335dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/textviewlastname"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/border"
-        android:hint="Last Name"
-        android:inputType="text"
-        />
+        android:background="@drawable/boarder6"
+        android:hint=" Last Name"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/textviewemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edittextlastname"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Email" />
 
     <EditText
         android:id="@+id/edittextemail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/edittextlastname"
-        android:layout_margin="20dp"
+        android:layout_width="323dp"
+        android:layout_height="37dp"
+        android:layout_below="@id/textviewemail"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="49dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/border"
-        android:hint="Email"
-        android:inputType="text"
-         />
+        android:background="@drawable/boarder6"
+        android:hint=" Email"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/textviewphonenumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edittextemail"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Phone Number" />
 
     <EditText
         android:id="@+id/edittextphonenumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/edittextemail"
-        android:layout_margin="20dp"
+        android:layout_width="332dp"
+        android:layout_height="34dp"
+        android:layout_below="@id/textviewphonenumber"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="58dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/border"
-        android:hint="Phone Number"
-        android:inputType="text" />
+        android:background="@drawable/boarder6"
+        android:hint=" Phone Number"
+        android:inputType="phone" />
 
-    <EditText
-        android:background="@drawable/border"
-        android:id="@+id/edittextidNumber"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textviewidNumber"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/edittextphonenumber"
-        android:layout_margin="20dp"
         android:layout_marginStart="20dp"
-        android:hint="ID Number"
-        android:inputType="text"
-        />
+        android:layout_marginTop="20dp"
+        android:text="ID Number" />
+
+    <EditText
+        android:id="@+id/edittextidNumber"
+        android:layout_width="330dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/textviewidNumber"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/boarder6"
+        android:hint=" ID Number"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/textviewpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edittextidNumber"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Password" />
 
     <EditText
         android:id="@+id/edittextpassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/edittextidNumber"
-        android:layout_margin="20dp"
+        android:layout_width="327dp"
+        android:layout_height="46dp"
+        android:layout_below="@id/textviewpassword"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/border"
-        android:hint="Password"
-        android:inputType="textPassword"
-        />
+        android:background="@drawable/boarder6"
+        android:hint=" Password"
+        android:inputType="textPassword" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -17,34 +16,52 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Investapp"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ui.Withdraw.WithdrawActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Investapp.NoActionBar"
+            />
+        <activity
+            android:name=".ui.Bank.BankActivity"
+            android:theme="@style/Theme.Investapp.NoActionBar" />
+        <activity
+            android:name=".ui.Topup.TopUpActivity"
+            android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
             android:name=".ui.resetpassword.ResetActivity"
             android:exported="false" />
         <activity
             android:name=".ui.Reset_password"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Investapp.NoActionBar" />
         <activity
             android:name=".ui.otp.EmailActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Investapp.NoActionBar" />
         <activity
             android:name=".ui.AccountsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Investapp.NoActionBar" />
         <activity
             android:name=".ui.Transaction.TransactionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Investapp.NoActionBar" />
         <activity
             android:name=".ui.mpesa.BuyActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Investapp.NoActionBar" />
         <activity
             android:name=".ui.OtpVerificationActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Investapp.NoActionBar" />
         <activity
             android:name=".ui.moredetails.MoreDetails"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Investapp.NoActionBar" />
         <activity
             android:name=".ui.personaldetails.PersonalDetails"
-            android:exported="false" /> <!-- <activity -->
+            android:exported="false"
+            android:theme="@style/Theme.Investapp.NoActionBar" /> <!-- <activity -->
         <!-- android:name=".ui.landingpage" -->
         <!-- android:exported="false" /> -->
         <activity
@@ -52,27 +69,32 @@
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="false" />
-
+            android:exported="false"
+            android:theme="@style/Theme.Investapp.NoActionBar" />
         <activity
             android:name=".ui.emailverification.EmailVerificationActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Investapp.NoActionBar" />
         <activity
             android:name=".calcutor"
-            android:exported="false" />
-
+            android:exported="false"
+            android:theme="@style/Theme.Investapp.NoActionBar" />
         <activity
             android:name=".ui.productsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Investapp.NoActionBar" />
         <activity
             android:name=".ui.RealEstateActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Investapp.NoActionBar" />
         <activity
             android:name=".ui.MoneyMarketActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Investapp.NoActionBar" />
         <activity
             android:name=".ui.RetirementActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Investapp.NoActionBar" />
         <activity
             android:name=".onNavigationItemSelected"
             android:exported="false" />
@@ -83,13 +105,16 @@
             android:theme="@style/Theme.Investapp.NoActionBar" />
         <activity
             android:name=".HomePageActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Investapp.NoActionBar" />
         <activity
             android:name=".RegisterActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Investapp.NoActionBar" />
         <activity
             android:name=".ui.landingpage"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Investapp.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

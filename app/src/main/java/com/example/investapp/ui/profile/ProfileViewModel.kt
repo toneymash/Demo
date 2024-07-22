@@ -26,6 +26,7 @@ class ProfileViewModel(private val  profile: ProfileRepository) : ViewModel() {
 
                     _userProfile.value = profile
                 } else {
+
                     _error.value = "No token found"
                     _userProfile.value = null
                 }

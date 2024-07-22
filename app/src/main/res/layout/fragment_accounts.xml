@@ -1,105 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- res/layout/activity_main.xml -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/b1"
-    android:orientation="vertical"
+    android:background="#B0D7E8"
+    android:orientation="horizontal"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="20dp">
 
-        <Button
-            android:layout_width="125dp"
-            android:layout_height="40dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="102dp"
+        android:layout_height="142dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/boarder7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.298">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonTopUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_marginRight="30dp"
+            android:background="@drawable/btn5"
             android:text="top up" />
+    </androidx.cardview.widget.CardView>
 
-        <Button
-            android:layout_width="147dp"
-            android:layout_height="40dp"
+    <androidx.cardview.widget.CardView
+        android:background="@drawable/boarder7"
+        android:id="@+id/cardView"
+        android:layout_width="106dp"
+        android:layout_height="141dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cardView3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/cardView2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/withdraw"
+            android:layout_width="78dp"
+            android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_marginRight="30dp"
+            android:background="@drawable/btn5"
             android:text="withdraw" />
+    </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="107dp"
+        android:layout_height="141dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.299">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp">
-
-        <TextView
-            android:id="@+id/text1"
-            android:layout_width="0dp"
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="my account"
-            android:textAlignment="center"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/man"
-            android:layout_marginBottom="10dp" />
+            android:layout_margin="20dp"
+            android:background="@drawable/btn5"
+            android:text="Balance" />
+    </androidx.cardview.widget.CardView>
 
-        <ImageView
-            android:id="@+id/man"
-            android:layout_width="56dp"
-            android:layout_height="50dp"
-            android:src="@drawable/man"
-            app:layout_constraintTop_toBottomOf="@id/text1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="20dp" />
 
-        <EditText
-            android:id="@+id/details"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="account no"
-            android:textAlignment="center"
-            app:layout_constraintTop_toBottomOf="@id/man"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="10dp" />
-
-        <EditText
-            android:id="@+id/name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="name"
-            android:textAlignment="center"
-            app:layout_constraintTop_toBottomOf="@id/details"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="10dp" />
-
-        <EditText
-            android:id="@+id/phone"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:hint="phone no"
-            android:textAlignment="center"
-            app:layout_constraintTop_toBottomOf="@id/name"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="20dp" />
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Balance"
-            app:layout_constraintTop_toBottomOf="@id/phone"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
