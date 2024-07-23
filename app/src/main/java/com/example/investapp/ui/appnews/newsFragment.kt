@@ -1,7 +1,7 @@
-// NewsFragment.kt
 package com.example.investapp.ui.appnews
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -44,12 +44,14 @@ class NewsFragment : Fragment() {
     private fun observeViewModel() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.news.collect { news ->
+                Log.d("NewsFragment", "Received ${news.size} news items")
                 newsAdapter.submitList(news)
             }
         }
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.isLoading.collect { isLoading ->
+                Log.d("NewsFragment", "Loading state: $isLoading")
                 binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
             }
         }
@@ -57,6 +59,7 @@ class NewsFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.error.collect { error ->
                 error?.let {
+                    Log.e("NewsFragment", "Error: $it")
                     Toast.makeText(requireContext(), it, Toast.LENGTH_LONG).show()
                 }
             }

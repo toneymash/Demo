@@ -27,26 +27,26 @@
     <fragment
         android:id="@+id/nav_accounts"
         android:name="com.example.investapp.ui.accounts.accountsFragment"
-        android:label="@string/menu_accounts"
+        android:label="Accounts"
         tools:layout="@layout/fragment_accounts" />
     <fragment
         android:id="@+id/nav_our_products"
         android:name="com.example.investapp.ui.our_products.Our_ProductsFragment"
-        android:label="@string/menu_our_products"
+        android:label="our_products"
         tools:layout="@layout/fragment_our_products" />
 
     <fragment
         android:id="@+id/nav_news"
         android:name="com.example.investapp.ui.appnews.NewsFragment"
-        android:label="newsFragment" />
+        android:label="News" />
     <fragment
         android:id="@+id/nav_dashboard"
         android:name="com.example.investapp.ui.dashboard.DashboardFragment"
-        android:label="dashboardFragment" />
+        android:label="Dashboard" />
     <fragment
         android:id="@+id/nav_help"
         android:name="com.example.investapp.ui.help.HelpFragment"
-        android:label="helpFragment" />
+        android:label="Help" />
 
     <fragment
         android:id="@+id/nav_logout"
@@ -61,7 +61,7 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.investapp.ui.home.HomeFragment"
-        android:label="fragment_home"
+        android:label="Home"
         tools:layout="@layout/fragment_home" />
 
 </navigation>

@@ -1,6 +1,6 @@
-// NewsViewModel.kt
 package com.example.investapp.ui.appnews
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -26,6 +26,7 @@ class NewsViewModel : ViewModel() {
             try {
                 _news.value = repository.getNews()
             } catch (e: Exception) {
+                Log.e("NewsViewModel", "Error fetching news", e)
                 _error.value = "Failed to fetch news: ${e.message}"
             } finally {
                 _isLoading.value = false
